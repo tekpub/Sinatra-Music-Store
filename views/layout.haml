@@ -1,0 +1,49 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %link{:href => "/css/site.css", :rel => "stylesheet", :type => "text/css"}/
+    %title
+      ASP.NET MVC Music Store
+  %body
+    #container
+      #header
+        %h1
+          %a{:href => "/"} ASP.NET MVC MUSIC STORE
+        %ul#navlist
+          %li.first
+            %a#current{:href => "/"} Home
+          %li
+            %a{:href => "/Store/"} Store
+          %li
+            %a#cart-status{:href => "/ShoppingCart?Length=12"} Cart (0)
+          %li
+            %a{:href => "/StoreManager/"} Admin
+      #content-section
+        #categories
+          %ul
+            %li
+              %a{:href => "/Store/Browse/Rock"} Rock
+            %li
+              %a{:href => "/Store/Browse/Jazz"} Jazz
+            %li
+              %a{:href => "/Store/Browse/Metal"} Metal
+            %li
+              %a{:href => "/Store/Browse/Alternative"} Alternative
+            %li
+              %a{:href => "/Store/Browse/Disco"} Disco
+            %li
+              %a{:href => "/Store/Browse/Blues"} Blues
+            %li
+              %a{:href => "/Store/Browse/Latin"} Latin
+            %li
+              %a{:href => "/Store/Browse/Reggae"} Reggae
+            %li
+              %a{:href => "/Store/Browse/Pop"} Pop
+            %li
+              %a{:href => "/Store/Browse/Classical"} Classical
+        #main
+          = yield
+        #footer
+          built with
+          %a{:href => "http://asp.net/mvc"} ASP.NET MVC 2
+
