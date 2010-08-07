@@ -1,0 +1,10 @@
+.genre
+  %p
+    %strong=@genre.name
+  %ul{:id => "album-list"}
+    - @genre.albums.each do |a|
+      %li
+        %a{:href => "#{a.artist.slug}/#{a.slug}", :title => "#{a.name}"}
+          %img{:src => "#{a.thumb}", :alt => "#{a.name}"}
+          %span=a.name
+

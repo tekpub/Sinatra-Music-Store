@@ -1,0 +1,17 @@
+#album-details
+  %h3=@album.name
+  %img{:src => "#{@album.thumb}", :alt => "#{@album.name}"}
+  %p
+    %em Genre
+    = @album.genre.name
+  %p
+    %em Artist
+    = @artist.name
+  %p
+    %em Price
+    = @album.price
+  %p
+    %form{:action => "/customer/add_item", :method => "post"}
+      %input{:type => "hidden", :name => "album_id", :value => @album.id}
+      %input{:type => "submit", :value => 'Add to cart'}
+
