@@ -4,7 +4,7 @@
   %ul{:id => "album-list"}
     - @genre.albums.each do |a|
       %li
-        %a{:href => "#{album_url(a)}", :title => "#{a.name}"}
-          = image_tag(a.thumb)
-          %span=a.name
+        = link_to(image_tag(a.thumb), url_for(:album, :artist => a.artist.slug, :album => a.slug))
+        %span=link_to(a.name, url_for(:album, :artist => a.artist.slug, :album => a.slug))
+
 

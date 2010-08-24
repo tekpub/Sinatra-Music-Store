@@ -8,11 +8,15 @@ require 'music_catalog/model/track'
 require "customer/app"
 require "customer/model/customer"
 require "customer/model/cart_item"
+require "lib/routes"
+require "lib/db"
+require "lib/user"
+require "lib/blacklist"
 
-map "/" do
+map SinatraStore::Routes.store_root do
 	run MusicCatalog
 end
 
-map "/customer" do
-	run CustomerApp
+map SinatraStore::Routes.customer_root do
+	run CustomerApp 
 end
